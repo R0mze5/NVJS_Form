@@ -1,0 +1,213 @@
+@import 'core/resolutions.less';
+@import 'core/reset.less';
+
+:root{
+    --dark_color: #202124;
+	--dark_light_color: #5f6368;
+	
+	--red_color: #f91300;
+
+    --accent_color: var(--dark_color);
+    --second_color:  #ffffff;
+
+    --header_font: Roboto;
+    --text_font: Roboto;
+
+
+	--header_height: 70px;
+	--background-color: var(--accent_color);
+	--header_padding-width: 5.9%;
+
+	--text_color: #ffffff;
+	
+	--header_width_logo: fit-content;
+	--header_height_logo: 27px;
+	--header_margin-right_logo: 30px;
+
+	@media @tablet{
+		--header_padding-width: 37px;
+    }
+    
+	@media @tablet_landscape{
+		--header_margin-right_logo: 60px;
+	}
+}
+
+
+.input_search{
+    --button_width: 23px; //width of image (button)
+
+    --padding-w: 10px; //horizontal padding
+    --padding-h: 10px; //vertical padding
+
+    --coefficient_of_elongation: 5;
+    --z-index: 1; //initial z-index
+
+    --background-color: #202124;
+    --elements_color: #ffffff;
+
+    --background-color-hover: #5f6368; // settings for "colored" mixin
+    --elements_color_hover: #000000; // settings for "colored" mixin
+
+    --border-radius: 0px;
+
+    --border_color: #202124; // settings for "bordered" mixin
+
+    @media @tablet_landscape{
+        --coefficient_of_elongation: 3.5;
+    }
+
+    @media @desktop{
+        --coefficient_of_elongation: 4;
+    }
+}
+
+.form{
+
+	&__title{
+		margin-bottom: 15px;
+		font-family: var(--text_font);
+		font-size: 14px;
+		color: #171717;
+
+		@media @tablet_landscape{
+			font-size: 30px;
+			margin-bottom: 21px;
+		}
+	}
+
+	&__label{
+		display: block;
+		color: #5a5a5a;
+		font-size: 12px;
+		font-family: var(--text_font);
+		font-weight: 400;
+		margin-bottom: 10px;
+		@media @desktop{
+			font-size: 20px;
+		}
+	}
+
+	/* inputs styles */
+	--input_min_height: 37px;
+	--textarea_height: 115px;
+
+	--input_padding--left: 15px;
+	--input_padding--right: var(--input_padding--left);
+	--input_padding--top: 10px;
+	--input_padding--bottom: var(--input_padding--top);
+
+	--input_border: 1px solid var(--dark_light_color);
+	--input_border_active: 1px solid var(--dark_color);
+	--input_border-radius: 0px;
+	
+	
+	--input_background: #ffffff;
+	--error_color: var(--red_color);
+
+	--input_text_color: #171717;
+	--input_placeholder_color: #5a5a5a;
+	--input_font_size: 14px;
+	--input_font_family: var(--text_font);
+	--input_font_weight: 400;
+
+	--box_shadow_color: transparent;
+
+	--add_placeholder_top_coef: 0.7;
+	--add_placeholder_left_coef: 0.65;
+
+	@media @tablet_landscape{
+		--input_min_height: 46px;
+	}
+
+	/* ./inputs styles */
+
+	& .checkbox,
+	& .radio{
+		--checkbox_box-width: 12px;
+		--inside_color: #ffffff;
+		--check_backround_color: var(--dark_color);
+	
+		--border-width: 1px;
+		--border-radius: 0px;
+		--border_color: #979797;
+		    --border__active_color: var(--dark_color);
+		--error_color: var(--red_color);
+	
+		--foolish_space: 2px;
+	
+		--margin-right: 9px;
+		--margin-top: 2px;
+	
+		--content_padding-top: 1px;
+	}
+
+	& .radio{
+		--border-radius: 50%;
+		--dot-margin-right: 3px;
+		--dot-margin-top: 2px;
+		--radio_margin-right: 18px;
+		--content_padding-top: 0px;
+	}
+
+	& .input_file{
+		--input_file_padding--left: 22px;
+		--input_file_padding--right: 15px;
+		--input_file_padding--top: 15px;
+		--input_file_padding--bottom: var(--input_file_padding--top);
+		--input_background: #ffffff;
+		--input_file_font-family: Roboto;
+	
+		--placeholder_margin-left: 14px;
+		--placeholder_color: #5f6368;
+		--placeholder_active-color: #202124;
+		--placeholder_font-size: 18px;
+		--placeholder_font-weight: 300;
+	
+		--text_color: #202124;
+		--text_font-size: 11px;
+		--text_font-weight: 300;
+		--text_decoration: underline solid;
+	
+		--icon_size: 40px;
+	
+		@media @desktop{
+			--placeholder_margin-left: 28px;
+			--text_font-size: 18px;
+			--placeholder_font-size: 24px;
+		}
+	}
+
+	--form_container_column: 1;
+
+	@media @tablet{
+		padding-left: 30px;
+		padding-right: 30px;
+		--form_container_column: 2;
+	}
+
+	@media @desktop{	
+		--form_container_column: 4;
+	}
+
+}
+
+body{
+    background-color: #e2e2e2;
+}
+
+.add_more{
+	text-decoration: underline solid;
+}
+
+.button_container{
+	display: flex;
+	& .button{
+		margin-right: 20px;
+		margin-left: 0;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}

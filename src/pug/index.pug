@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+  <title>NVJS_Form</title>
+  <link rel="shortcut icon" href="/dist/images/favicon/favicon.ico">
+  <link href="./dist/css/NVJS_Form.css" rel="stylesheet">
+  <link href="./dist/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  
+    form.input_search(action="")
+        input.input_search__input(type="text" placeholder="" name="search" value="" required)
+        svg.input_search__icon(xmlns="http://www.w3.org/2000/svg")
+            use(xlink:href="#svg-search")
+            button.input_search__button
+        label.input_search__placeholder(for="")
+
+    <!-- search icon -->
+    <div class="svg-root" style="position: absolute; width: 0; height: 0; visibility: hidden;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none" aria-hidden="true">
+        <symbol id="svg-search" viewBox="0 0 21 22">
+            <title>svg-search</title>
+            <path d="M20.8852437,21.2967942 L14.766795,14.8782238 C16.3273926,13.2994374 17.294222,11.1229468 17.294222,8.72257675 C17.294222,3.91269871 13.4153751,0 8.647111,0 C3.87884693,0 0,3.91269871 0,8.72257675 C0,13.5324548 3.87884693,17.4451535 8.647111,17.4451535 C10.7401236,17.4451535 12.6610176,16.6904429 14.1582031,15.4381301 L20.2914754,21.8724842 C20.3721817,21.9576332 20.4800647,22 20.5883595,22 C20.6913013,22 20.7938313,21.9613714 20.8737142,21.8841143 C21.0375975,21.7250312 21.0425387,21.4621078 20.8852437,21.2967942 Z M8.647111,16.6144319 C4.33302614,16.6144319 0.823534381,13.0743118 0.823534381,8.72257675 C0.823534381,4.37084167 4.33302614,0.830721595 8.647111,0.830721595 C12.9611958,0.830721595 16.4706876,4.37084167 16.4706876,8.72257675 C16.4706876,13.0743118 12.9607841,16.6144319 8.647111,16.6144319 Z">
+        </symbol>
+    </div>
+
+    form.form
+        .form__wrapper
+    
+            .form__area
+                h4.form__title Information  
+                .form__container
+                    .input
+                        - var name = "Name"
+                        input.input__field(type="text", placeholder= name, name="name")
+                        p.input__placeholder= name
+                
+                    .input
+                        - var name = "Email"
+                        input.input__field(type="email", placeholder= name, name="email") 
+                        p.input__placeholder= name
+                
+                    .input
+                        - var name = "Telephone"
+                        input.input__field(type="tel", placeholder= name, name="tel")
+                        p.input__placeholder= name
+
+                    .input
+                        - var name = "Address"
+                        input.input__field(type="text", placeholder= name, name="home") 
+                        p.input__placeholder= name
+
+                .input
+                    - var name = "Age"
+                    input.input__field(type="number", placeholder= name, name="age" min="18" max="76", maxlength="2")
+                    p.input__placeholder= name
+            
+                .input
+                    - var name = "Salary"
+                    input.input__field(type="number", placeholder= name, name="salry")
+                    p.input__placeholder= name
+
+            .form__area
+                .form__group
+                    label.form__label Answer
+                    - var radioName =  "answer"
+                    .radio
+                        .radio__container
+                            - var radioMarker =  "1"
+                            input.radio__input(id="radio_"+radioName + radioMarker type="radio" name=radioName value=radioName + radioMarker checked)
+                            label.radio__label(for="radio_"+radioName+radioMarker)
+                                span.radio__content Yes   
+                        .radio__container
+                            - var radioMarker =  "2"
+                            input.radio__input(id="radio_"+radioName+radioMarker type="radio" name=radioName value=radioName+radioMarker)
+                            label.radio__label(for="radio_"+radioName+radioMarker)
+                                span.radio__content No     
+
+
+            .form__area
+                h4.form__title Experience  
+                .form__group
+                    .form__container(style="--form_container_column: 2")
+                    
+                        .form__group
+                            label.form__label since
+                            .input_date
+                                input.input_date__field(type="date", name="workstart")
+                        .form__group
+                            label.form__label to
+                            .input_date
+                                input.input_date__field(type="date" name="workend")
+                        
+                    .input
+                        - var name = "Workplace"
+                        input.input__field(type="text", placeholder= name, name="workplace")
+                        p.input__placeholder= name
+
+                .add_more duplicate fields
+
+            .form__area
+                h4.form__title Additional information 
+
+                .input
+                    - var name = "Additional information"
+                    textarea.input__field(placeholder= name, name="cources")
+                    p.input__placeholder= name
+
+
+            .form__area
+                .form__group
+                    label.form__label Attach file
+                    .input_file.text(attach-text="Choose")
+                        input.input_file__input(type="file", name="photo")
+                        .input_file__icon
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="#svg-attach")
+                        .input_file__text Choose file 
+
+
+            .form__area
+                - var checkBoxId =  "agreement"
+                .checkbox.agreement
+                    input.checkbox__input(type="checkbox" id=checkBoxId)
+                    label.checkbox__label(for=checkBoxId)
+                        span.checkbox__content
+                            | I am agree with
+                            a.agreement__link(href="") 
+                                | confidentional politics
+                        
+
+                .form__captcha(style="min-width:40px; height: 80px; color: #ffffff; background-color: var(--dark_light_color); display: flex; align-items: center; justify-content: center;") Kaptcha place
+
+                        
+            .button_container
+                .button.reset.dark_light_btn reset
+                button.button.gradient send
+
+
+
+
+    <script src="./dist/js/NVJS_Form.js"></script>
+    <script>
+        | Array.apply(null, document.querySelectorAll('form')).forEach(form => {
+        |     new NJVSForm(form);
+        | })
+        |
+    </script>        
+    </body>
+
+</html>

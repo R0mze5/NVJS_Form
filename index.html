@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+<title>NVJS_Form</title>
+<link rel="shortcut icon" href="/dist/images/favicon/favicon.ico">
+<link href="./dist/css/NVJS_Form.css" rel="stylesheet">
+<link href="./dist/css/main.css" rel="stylesheet">
+</head>
+<body>
+<form class="input_search" action="">
+  <input class="input_search__input" type="text" placeholder="" name="search" value="" required="required"/>
+  <svg class="input_search__icon" xmlns="http://www.w3.org/2000/svg">
+    <use xlink:href="#svg-search"></use>
+    <button class="input_search__button"></button>
+  </svg>
+  <label class="input_search__placeholder" for=""></label>
+</form><!-- search icon -->
+<div class="svg-root" style="position: absolute; width: 0; height: 0; visibility: hidden;">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none" aria-hidden="true">
+<symbol id="svg-search" viewBox="0 0 21 22">
+<title>svg-search</title>
+<path d="M20.8852437,21.2967942 L14.766795,14.8782238 C16.3273926,13.2994374 17.294222,11.1229468 17.294222,8.72257675 C17.294222,3.91269871 13.4153751,0 8.647111,0 C3.87884693,0 0,3.91269871 0,8.72257675 C0,13.5324548 3.87884693,17.4451535 8.647111,17.4451535 C10.7401236,17.4451535 12.6610176,16.6904429 14.1582031,15.4381301 L20.2914754,21.8724842 C20.3721817,21.9576332 20.4800647,22 20.5883595,22 C20.6913013,22 20.7938313,21.9613714 20.8737142,21.8841143 C21.0375975,21.7250312 21.0425387,21.4621078 20.8852437,21.2967942 Z M8.647111,16.6144319 C4.33302614,16.6144319 0.823534381,13.0743118 0.823534381,8.72257675 C0.823534381,4.37084167 4.33302614,0.830721595 8.647111,0.830721595 C12.9611958,0.830721595 16.4706876,4.37084167 16.4706876,8.72257675 C16.4706876,13.0743118 12.9607841,16.6144319 8.647111,16.6144319 Z">
+</symbol>
+</div>
+<form class="form">
+  <div class="form__wrapper">
+    <div class="form__area">
+      <h4 class="form__title">Information  </h4>
+      <div class="form__container">
+        <div class="input">
+          <input class="input__field" type="text" placeholder="Name" name="name"/>
+          <p class="input__placeholder">Name</p>
+        </div>
+        <div class="input">
+          <input class="input__field" type="email" placeholder="Email" name="email"/>
+          <p class="input__placeholder">Email</p>
+        </div>
+        <div class="input">
+          <input class="input__field" type="tel" placeholder="Telephone" name="tel"/>
+          <p class="input__placeholder">Telephone</p>
+        </div>
+        <div class="input">
+          <input class="input__field" type="text" placeholder="Address" name="home"/>
+          <p class="input__placeholder">Address</p>
+        </div>
+      </div>
+      <div class="input">
+        <input class="input__field" type="number" placeholder="Age" name="age" min="18" max="76" maxlength="2"/>
+        <p class="input__placeholder">Age</p>
+      </div>
+      <div class="input">
+        <input class="input__field" type="number" placeholder="Salary" name="salry"/>
+        <p class="input__placeholder">Salary</p>
+      </div>
+    </div>
+    <div class="form__area">
+      <div class="form__group">
+        <label class="form__label">Answer</label>
+        <div class="radio">
+          <div class="radio__container">
+            <input class="radio__input" id="radio_answer1" type="radio" name="answer" value="answer1" checked="checked"/>
+            <label class="radio__label" for="radio_answer1"><span class="radio__content">Yes   </span></label>
+          </div>
+          <div class="radio__container">
+            <input class="radio__input" id="radio_answer2" type="radio" name="answer" value="answer2"/>
+            <label class="radio__label" for="radio_answer2"><span class="radio__content">No     </span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form__area">
+      <h4 class="form__title">Experience  </h4>
+      <div class="form__group">
+        <div class="form__container" style="--form_container_column: 2">
+          <div class="form__group">
+            <label class="form__label">since</label>
+            <div class="input_date">
+              <input class="input_date__field" type="date" name="workstart"/>
+            </div>
+          </div>
+          <div class="form__group">
+            <label class="form__label">to</label>
+            <div class="input_date">
+              <input class="input_date__field" type="date" name="workend"/>
+            </div>
+          </div>
+        </div>
+        <div class="input">
+          <input class="input__field" type="text" placeholder="Workplace" name="workplace"/>
+          <p class="input__placeholder">Workplace</p>
+        </div>
+      </div>
+      <div class="add_more">duplicate fields</div>
+    </div>
+    <div class="form__area">
+      <h4 class="form__title">Additional information </h4>
+      <div class="input">
+        <textarea class="input__field" placeholder="Additional information" name="cources"></textarea>
+        <p class="input__placeholder">Additional information</p>
+      </div>
+    </div>
+    <div class="form__area">
+      <div class="form__group">
+        <label class="form__label">Attach file</label>
+        <div class="input_file text" attach-text="Choose">
+          <input class="input_file__input" type="file" name="photo"/>
+          <div class="input_file__icon">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#svg-attach"></use>
+            </svg>
+          </div>
+          <div class="input_file__text">Choose file </div>
+        </div>
+      </div>
+    </div>
+    <div class="form__area">
+      <div class="checkbox agreement">
+        <input class="checkbox__input" type="checkbox" id="agreement"/>
+        <label class="checkbox__label" for="agreement"><span class="checkbox__content">I am agree with<a class="agreement__link" href="">
+               confidentional politics</a></span></label>
+      </div>
+      <div class="form__captcha" style="min-width:40px; height: 80px; color: #ffffff; background-color: var(--dark_light_color); display: flex; align-items: center; justify-content: center;">Kaptcha place</div>
+    </div>
+    <div class="button_container">
+      <div class="button reset dark_light_btn">reset</div>
+      <button class="button gradient">send</button>
+    </div>
+  </div>
+</form><script src="./dist/js/NVJS_Form.js"></script>
+<script>Array.apply(null, document.querySelectorAll('form')).forEach(form => {
+    new NJVSForm(form);
+})
+</script>        
+</body>
+</html>

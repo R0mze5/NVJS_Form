@@ -1,0 +1,97 @@
+
+// .input_date>input.input_date__field[type="date" name="workstart"]
+
+// .input_date{
+//     --input_min_height: 37px;
+
+//     --input_padding--left: 15px;
+//     --input_padding--right: var(--input_padding--left);
+//     --input_padding--top: 10px;
+//     --input_padding--bottom: var(--input_padding--top);
+
+//     --input_border: 1px solid #ffffff;
+//     --input_border_active: 1px solid #979797;
+//     --input_border-radius: 0px;
+    
+    
+//     --input_background: #ffffff;
+//     --error_color: var(--red_color);
+
+//     --input_text_color: #171717;
+//     --input_placeholder_color: #5a5a5a;
+//     --input_font_size: 12px;
+//     --input_font_family: var(--text_font);
+//     --input_font_weight: 400;
+
+//     --box_shadow_color: transparent;
+
+//     @media @desktop{
+//         --input_min_height: 73px;
+//     	--input_padding--left: 60px;
+//         --input_padding--top: 20px;
+//         --input_border: 1px solid #ebebeb;
+//         --input_font_size: 20px;
+//     }
+// }
+
+.input_date{
+    position: relative;
+    display: block;
+
+    &.error{
+        /* --box_shadow_color: var(--error_color); */
+        --input_border: 1px solid var(--error_color);
+        --input_text_color: var(--error_color);
+    }
+
+    .style_mixin{
+        color:  var(--input_text_color);
+        font-family: var(--input_font_family);
+        font-size: var(--input_font_size);
+        font-weight: var(--input_font_weight);
+    }
+
+    box-shadow: inset 0 0 0 1px var(--box_shadow_color);
+    min-height: var(--input_min_height);    
+    font-size: var(--input_font_size);
+    border-radius: var(--input_border-radius);
+    background-color: var(--input_background);
+
+
+    
+    &__field{
+        .style_mixin;
+        min-height: var(--input_min_height);  
+        border: var(--input_border);
+        border-radius: var(--input_border-radius);
+        background-color: var(--input_background);
+        padding-top: var(--input_padding--top);
+        padding-right: calc(~'var(--input_padding--right) / 2');
+        padding-bottom: var(--input_padding--bottom);
+        padding-left: var(--input_padding--left);
+        position: relative;
+        width: 100%;
+    
+        &:focus,
+        &:active,
+        &:hover{
+            border: var(--input_border_active);
+            outline: none;
+        }
+    
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: calc(~'var(--input_padding--right) / 2');
+        }
+    
+    
+        &::-webkit-clear-button { /* Removes blue cross */
+            display: none;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}

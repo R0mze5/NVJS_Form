@@ -1,0 +1,156 @@
+@import 'core/resolutions.less';
+
+@import 'form_elements/input.less';
+@import 'form_elements/input_date.less';
+@import 'form_elements/input_file.less';
+@import 'form_elements/input_search.less';
+
+@import 'form_elements/checkbox.less';
+@import 'form_elements/radio.less';
+
+@import 'elements/button.less';
+
+.form{
+
+	text-align: left;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	--form_container_column: 1;
+
+	@media @tablet{
+		padding-left: 30px;
+		padding-right: 30px;
+		--form_container_column: 2;
+	}
+
+	@media @desktop{	
+		--form_container_column: 4;
+	}
+	
+	--container_row_gap: 14px;
+	--area_margin_bottom: 24px;
+	--container_column_gap: 5px;
+	@media @tablet{
+		--container_row_gap: 20px;
+		--area_margin_bottom: 30px;
+		--container_column_gap: 15px;
+	
+	}
+
+	@media @desktop{
+		--container_row_gap: 28px;
+		--area_margin_bottom: 32px;
+	}
+
+
+
+	&__wrapper{ 
+		max-width: 920px;
+		margin: 0 auto;
+	}
+
+	&__area{
+		margin-bottom: var(--area_margin_bottom);
+
+		@supports (display: grid){
+			display: grid;
+			grid-row-gap: var(--container_row_gap);
+		}
+	}
+
+
+
+
+
+
+	// ------------------------
+
+	& .input,
+	& .input_date,
+	&__group,
+	&__captcha,
+	& .checkbox,
+	& .radio{
+		flex: 1;
+		margin-bottom: var(--container_row_gap);
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		@supports (display: grid){
+			margin-bottom: 0;
+		}
+	}
+
+	&__container{
+		position: relative;
+		min-width: 100%;
+		flex: initial;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-left: calc(~'var(--container_column_gap) * -1');
+		margin-right: calc(~'var(--container_column_gap) * -1');
+
+		&.hidden{
+			display: none;
+		}
+		
+		@supports (display: grid){
+			display: grid;
+			grid-row-gap: var(--container_row_gap);
+			grid-column-gap: var(--container_column_gap);
+			grid-template-columns: repeat(var(--form_container_column), 1fr);
+			margin: 0;
+			
+			width: 100%;
+		}
+
+		&>.input,
+		&>.input_date,
+		&>.form__group,
+		&>.form__captcha,
+		&>.checkbox,
+		&>.radio,
+		&>.input__captcha{
+			margin-left: var(--container_column_gap);
+			margin-right: var(--container_column_gap);
+			width: 100%;
+			flex: 1 1 calc(~'(-8 * var(--container_column_gap) + 100%) / var(--form_container_column)');
+			
+	
+			&:last-child{
+				margin-bottom: var(--container_row_gap);
+			}
+			
+			@supports (display: grid){
+				margin: 0;
+				flex: initial;
+				&:last-child{
+					margin-bottom: 0 !important;
+				}
+			}
+		}
+
+		&>.form__group{
+			@supports (display: grid){
+				margin-bottom: var(--container_row_gap);
+			}
+		}
+	}
+
+
+	
+	& .form__title{
+		@supports (display: grid){
+			margin-bottom: 0;
+		}
+	}
+
+	&__label{
+	}
+}
